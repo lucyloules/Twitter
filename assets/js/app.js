@@ -1,25 +1,37 @@
+/*Se carga toda la pagina primero y luego se ejecuta el js*/
 window.onload = function() {
-    /*Esto es porque soy flojo, getElements... entrega arreglo y 
-    solo queremos el primero de sus elementos que retorna porque 
-    sabemos que existe al menos uno*/
-    var sendButton = document.getElementsByName("enviar")[0];
-    var thinkInput = document.getElementsByName("loQuePenso")[0];
-    var timeLine = document.getElementsByName("lineaDeTiempo")[0];
-    sendButton.onclick = function() {
-        if (thinkInput.value == "") {
-            alert("tení k poner algo oe!");
+
+	/*declaro las variables*/
+
+    var submit = document.getElementsByName("btn")[0];
+    var commentInput = document.getElementsById("comment")[0];
+    var timeLine = document.getElementsById("timeLineShow")[0];
+
+ /*   var submit = document.getElementsById("btn");
+    var commentInput = document.getElementsById("comment");
+    var timeLine = document.getElementsById("timeLineShow");*/
+
+    /*function submit*/
+    submit.onclick = function() {
+    	/*valida que el comentario no este vacio, en caso de que lo esté
+    	se muestra una alerta para el usuario*/
+        if (commentInput.value == "") {
+            alert("Ingrese un Comentario");
+
         } else {
+        	/*Por cada comentario válido, se crean 4 elementos*/
             var tuitDiv = document.createElement("div");
             var nameSpan = document.createElement("span");
             var dateSpan = document.createElement("span");
             var tuitP = document.createElement("p");
+
             tuitDiv.appendChild(nameSpan);
             tuitDiv.appendChild(dateSpan);
             tuitDiv.appendChild(tuitP);
             tuitDiv.className = "tuit"
-            nameSpan.textContent = "El Brayatan";
+            nameSpan.textContent = "Lucylouless";
             dateSpan.textContent = new Date();
-            tuitP.textContent = thinkInput.value;
+            tuitP.textContent = .value;
 
             /* Usamos timeLine.children para obtener los hijos
              del nodo, este siempre es un arreglo, aunque venga

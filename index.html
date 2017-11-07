@@ -4,12 +4,16 @@
 	<meta charset="utf-8">
 	<title>Twitter Maquetado</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="assets/font-awesome-4.7.0/css/font-awesome.min.css">
 	<script src="assets/js/app.js" type="text/javascript"></script>
 </head>
 <body>
 <!-- Barra Navegación -->	
 <nav>
-	<!-- <h1>Twitter</h1> -->
+	<!-- Logo Twitter -->	
+	<!-- <div class="logo">
+		<i  id="bird" class="fa fa-twitter" aria-hidden="true"></i>
+	</div> -->
 	<a href="http://www.Twitter.com" target="_parent">Twitter</a>
 </nav>
 <!-- Logo Twitter -->	
@@ -21,14 +25,14 @@
 		Lucia Lagos
 	</p>
 </div>
-<!-- Contenedor Izquierdo-->
+<!-- contenedor comentarios -->
 <div class="box-2">
 	<h2>Redactar un nuevo Tweet</h2>
-	<textarea name="comentarios" rows="10" cols="40">Escribe aquí tus comentarios</textarea>
+	<textarea id="comment" class="text"  placeholder="Añade un comentario..."></textarea>
 	<hr>
 	<div class="pie-tweet"> 
 		<div class="div-button">
-			<button id ="btn" name="enviar"> Tweet</button>
+			<button type="button" id ="btn" name="submit"> Tweet</button>
 		</div>
 		
 		<!-- Contenedor del Contador de letras -->
@@ -39,6 +43,9 @@
 	</div>
 	
 </div>
-
+<!-- contenedor: linea de tiempo -->
+<div id="timeLineShow" name="timeLineShow">
+	
+</div>
 </body>
 </html>
