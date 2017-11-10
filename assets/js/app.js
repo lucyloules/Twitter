@@ -3,15 +3,17 @@ window.onload = function() {
 
 	/*declaro las variables*/
 
-    var submit = document.getElementsByName("btn")[0];
+/*    var submit = document.getElementsByName("btn")[0];
     var commentInput = document.getElementsById("comment")[0];
-    var timeLine = document.getElementsById("timeLineShow")[0];
+    var timeLine = document.getElementsById("timeLineShow")[0];*/
+    var valor = document.getElementById("valor").value;
+    var max=140;
+    var submit = document.getElementById("btn");
+    var commentInput = document.getElementById("comment");
+    var long  =comment.leng
+    var timeLine = document.getElementById("timeLineShow");
 
- /*   var submit = document.getElementsById("btn");
-    var commentInput = document.getElementsById("comment");
-    var timeLine = document.getElementsById("timeLineShow");*/
-
-    /*function submit*/
+    /*de submit agrego funcion on click*/
     submit.onclick = function() {
     	/*valida que el comentario no este vacio, en caso de que lo esté
     	se muestra una alerta para el usuario*/
@@ -29,9 +31,9 @@ window.onload = function() {
             tuitDiv.appendChild(dateSpan);
             tuitDiv.appendChild(tuitP);
             tuitDiv.className = "tuit"
-            nameSpan.textContent = "Lucylouless";
+            nameSpan.textContent = "Lucylouless ";
             dateSpan.textContent = new Date();
-            tuitP.textContent = .value;
+            tuitP.textContent = commentInput.value;//lo que ingresa el usuario
 
             /* Usamos timeLine.children para obtener los hijos
              del nodo, este siempre es un arreglo, aunque venga
