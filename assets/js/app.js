@@ -1,17 +1,16 @@
 /*Se carga toda la pagina primero y luego se ejecuta el js*/
 window.onload = function() {
 
-	/*declaro las variables*/
-
-/*    var submit = document.getElementsByName("btn")[0];
-    var commentInput = document.getElementsById("comment")[0];
-    var timeLine = document.getElementsById("timeLineShow")[0];*/
-    var valor = document.getElementById("valor").value;
+	/*declaro las variables globales*/
+    var valor = document.getElementById("valor");
     var max= 140;
     var submit = document.getElementById("btn");
     var commentInput = document.getElementById("comment");
     var long  =comment.leng
     var timeLine = document.getElementById("timeLineShow");
+
+
+
 
     /*de submit agrego funcion on click*/
     submit.onclick = function() {
@@ -40,38 +39,66 @@ window.onload = function() {
             timeLine.insertBefore(tuitDiv, timeLine.children[0]);
         }
     }
+
+
+
     /* Funcion cuenta los caracteres del comentario de usuario */
-    comment.onkeydown = function(){ //detecta cuando se aprieta el teclado
-            var largoCaracter = document.getElementById("comment").value.length; //cuenta caracteres
-             var cuenta=document.getElementById("valor");
+
+    comment.onkeyup = function(){ //detecta cuando se aprieta el teclado
+            var largoCaracter = document.getElementById("comment").value.length; //variable que guarda el largo de caracteres
+            var cuenta=document.getElementById("valor");
             cuenta.innerText = "" + (140 - largoCaracter); //cambio valor a contador
+          
+        //Boton: habilitado/desabilitado.
+ 	    if(largoCaracter >140){
+            btn.disabled = true;
+        } else{
+            btn.disabled = false;
         
-             //Si hay más de 140 caracteres, boton desabilitado.
-             if(largoCaracter <141){
-                      btn.disabled = false;
-                 } else{
-                      btn.disabled = true;
-                 };
-        
-                 //tiene q ser numero para que funcione
-                 //  si quedan  de 20 acaracteres cambiar color del texto
-                if(largoCaracter >= 120 && largoCaracter < 130){
-                    //valor.classList.add("red");
-                    //remuevo bluo para cuando reste caracteres
-                    cuenta.classList.remove('blue');
-                    //agrego clase red 
-                    cuenta.classList.add('red');
-                } else if(largoCaracter >= 130){
-                    //quito clase red
-                    cuenta.classList.remove('red');
-                    //agrego clase blue
-                    cuenta.classList.add('blue');
+        };
+        //Colores de los caracteres
+        if (largoCaracter >= 0 && largoCaracter < 121) {
+            valor.classList.add("blue");
+            valor.classList.remove("red");
+            valor.classList.remove("orange");
+        }
+        if(largoCaracter > 120 && largoCaracter < 131){
+            valor.classList.add("orange"); //agrego clase red
+            valor.classList.remove("blue");//remuevo clase blue
+            valor.classList.remove("red");
+
+        } else if(largoCaracter >130){
+            valor.classList.add("red");//agrego clase blue
+            valor.classList.remove("orange");//quito clase red
+            valor.classList.remove("blue");
+        }
+    }    
+  }
+ 
+
+/* 
+            Codigo fallido
+            if (largoCaracter=0) {
+                btn.disabled = true;
+                cuenta.classList.add("valor");
+            }else{
+                btn.disabled = false;
+                if (largoCaracter<121) {
+                    // document.getElementById("valor").style.color = "#1DA1F2"; 
+                }else if (largoCaracter<131) {
+                    // document.getElementById("valor").style.color = "orange"; 
+                    cuenta.classList.remove("valor"); 
+                    cuenta.classList.add("orange");
+                }else if(largoCaracter<141) {
+                    // document.getElementById("valor").style.color = "red"; 
+                    cuenta.classList.remove("valor");
+                    cuenta.classList.remove("orange"); 
+                    cuenta.classList.add("red"); 
+                }else{
+                    btn.disabled = true;
+                    cuenta.classList.remove("valor");
+                    cuenta.classList.remove("orange"); 
+                    cuenta.classList.add("red"); 
                 }
-                else{
-                    //sino remuevo ambas
-                    cuenta.classList.remove('red');
-                    cuenta.classList.remove('blue');
-                };
-                 
-         };
-}
+            }
+         }; */

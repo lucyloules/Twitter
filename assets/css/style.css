@@ -74,12 +74,7 @@ nav a{
 	margin: auto;
 	margin: 20px 0 20px;
 }
-/* Contador de Letras */
-.tweet-counter span{
-	color: #1DA1F2;
-	text-align: right;
-	font-weight: bolder;
-}
+
 .div-button{
 	float: left;
 	margin-left: 5%;
@@ -113,10 +108,27 @@ hr{
 .tuit p{
 	padding: 0;
 }
+/*	Contador de Letras
+	Colores segun cantidad de caracteres */
+.original{
+		color: #1DA1F2;
+		text-align: right;
+		font-weight: bolder;
+	}
 .red{
 	color: red;
+	text-align: right;
+	font-weight: bolder;
 }
-
+.orange{
+	color:orange;
+	text-align: right;
+	font-weight: bolder;
+}
 .blue{
-	color: blue;
+	color: #1DA1F2;
+	text-align: right;
+	font-weight: bolder;
 }
+/* .btnHabilitado{}
+.btnDeshabilitado{} */
