@@ -31,8 +31,9 @@ window.onload = function() {
             tuitDiv.appendChild(tuitP);
             tuitDiv.className = "tuit"
             nameSpan.textContent = " Lucia: ";
+            nameSpan.classList.add("namespan");
             tuitP.textContent = commentInput.value;//lo que ingresa el usuario
-            dateSpan.textContent = new Date();
+            dateSpan.textContent = moment().format('HH:MM: a');
             /* Usamos timeLine.children para obtener los hijos del nodo, este siempre es un arreglo, aunque venga vacío. 
              YYYYYYYY... como insertBefore recibe dos parámetros y el segundo es opcional, si, el primer nodo no existe en 
              el arreglo children, entonces nos dará undefined. Y eso hará que insertBefore agregue el nodo al último */
@@ -73,6 +74,10 @@ window.onload = function() {
             valor.classList.remove("blue");
         }
     }    
+    function altura() {
+        textarea.style.height = 'auto';
+        textarea.style.height = (textarea.scrollHeight) + 'px';
+    };
   }
  
 

@@ -35,30 +35,35 @@ nav a{
 	margin: 3%;
 	background-color: #fff;
 	border:1px solid grey;
-	border-radius: 3px;
+	border-radius: 10px;
 }
 .box-1{
 	width: 30%;
 	height: 200px;
 	float: left;
 	border:1px solid grey;
-	border-radius: 3px;
+	border-radius: 10px;
 }
 .box-1 h3,p{
 	padding: 5%;
 	margin: 2%;
 }
-.box-2 textarea{
+textarea{
 	border: 1px solid #1DA1F2;
 	width: 90%;
-	height: 35%;
+	min-height: 60px;
+	overflow-y: hidden;
 }
 .box-2{
 	width: 50%;
-	height: 300px;
+	min-height: 230px;
+	max-height: auto;
 	float: left;
 	text-align: center;
-	overflow: auto;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	/* overflow: auto; */
 }
 #btn {
 	background-color:  #1DA1F2;
@@ -100,10 +105,12 @@ hr{
 .tuit{
 	border: 1px solid grey;
 	background-color: #fff;
-	width: 80%;
+	border-radius: 10px;
+	width: 90%;
 	overflow: auto;
 	padding: 1%;
 	margin: 1%;
+	margin-left: 4%;
 }
 .tuit p{
 	padding: 0;
@@ -130,5 +137,11 @@ hr{
 	text-align: right;
 	font-weight: bolder;
 }
+
 /* .btnHabilitado{}
 .btnDeshabilitado{} */
+
+.namespan{
+	color: mediumvioletred;
+	font-weight: bolder;
+}
